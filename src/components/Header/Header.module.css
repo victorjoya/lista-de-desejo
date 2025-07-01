@@ -1,0 +1,23 @@
+.header {
+    background-color: blue;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid;
+    padding: 2rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 1000;
+    color: brown;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.0025em;
+}
