@@ -9,10 +9,10 @@ html {
 }
 
 body {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.6;
-  color: rgb(241, 0, 0);
-  background: rgb(245, 239, 239);
+  color: #334155;
+  background: #f8fafc;
 }
 
 img {
@@ -20,6 +20,7 @@ img {
   height: auto;
 }
 
-button, input {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+button,
+input {
+  font-family: inherit;
 }

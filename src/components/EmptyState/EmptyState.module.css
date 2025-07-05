@@ -1,0 +1,26 @@
+.container {
+    min-height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.messageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.icon {
+    font-size: 7rem
+}
+
+.message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: brown;
+}
