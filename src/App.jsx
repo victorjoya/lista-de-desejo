@@ -1,20 +1,20 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./App.module.css";
 import { CardGrid } from "./components/CardGrid/CardGrid";
-import { Footer } from "./components/Footer/Footer";
-import { Header } from "./components/Header/Header";
 import { AddItemForm } from "./components/AddItemForm/AddItemForm";
 
-function App() {
+const DEFAULT_FORM = {
+  name: "",
+  description: "",
+  urlImage: "",
+  date: "",
+  id: "",
+};
+
+function App({ search }) {
   const [wishs, setWishs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
-  const [form, setForm] = useState({
-    name: "",
-    description: "",
-    urlImage: "",
-    date: "",
-  });
+  const [form, setForm] = useState({});
 
   const filteredWishs = useMemo(() => {
     if (!search.trim()) {
@@ -29,23 +29,11 @@ function App() {
     });
   }, [search, wishs]);
 
-  const onSearch = useCallback((searchValue) => {
-    setSearch(searchValue);
-  });
-  const onClear = useCallback(() => {
-    setSearch("");
-  });
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedWishs = [...wishs, form];
     setWishs(updatedWishs);
-    setForm({
-      name: "",
-      description: "",
-      urlImage: "",
-      date: "",
-    });
+    setForm({});
   };
 
   useEffect(() => {
@@ -78,8 +66,7 @@ function App() {
   );
 
   return (
-    <div className={styles.app}>
-      <Header onSearch={onSearch} onClear={onClear} />
+    <>
       <main className={styles.main}>
         <AddItemForm
           handleSubmit={handleSubmit}
@@ -92,8 +79,7 @@ function App() {
           search={search}
         />
       </main>
-      <Footer />
-    </div>
+    </>
   );
 }
 
